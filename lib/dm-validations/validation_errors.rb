@@ -116,8 +116,8 @@ module DataMapper
         errors.send(meth, *args, &block)
       end
 
-      def respond_to?(method)
-        super || errors.respond_to?(method)
+      def respond_to?(method, include_all=false)
+        super || errors.respond_to?(method, include_all)
       end
 
       def [](property_name)
